@@ -1,0 +1,5 @@
+send host-name "<%= node['openvpn']['dhclient']['host-name'] %>";
+send dhcp-client-identifier <%= node['openvpn']['dhclient']['dhcp-client-identifier'] %>;
+prepend domain-name-servers <%= node['openvpn']['dhclient']['domain-name-servers'] %>;
+prepend domain-name "<%= node['openvpn']['dhclient']['domain-name'] %>";
+request subnet-mask, broadcast-address, interface-mtu;

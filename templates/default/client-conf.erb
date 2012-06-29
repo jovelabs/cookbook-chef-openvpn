@@ -1,0 +1,20 @@
+client
+dev <%= node['openvpn']['device'] %>
+proto <%= node['openvpn']['proto'] %>
+remote <%= node['openvpn']['server'] %> <%= node['openvpn']['port'] %>
+resolv-retry <%= node['openvpn']['resolv-retry'] %>
+nobind
+user <%= node['openvpn']['user'] %>
+group <%= node['openvpn']['group'] %>
+persist-key
+persist-tun
+ca ca.crt
+cert client.crt
+key client.key
+ns-cert-type server
+tls-auth ta.key 1
+cipher <%= node['openvpn']['cipher'] %>
+comp-lzo
+verb <%= node['openvpn']['verb'] %>
+up /etc/openvpn/vpn-up
+down /etc/openvpn/vpn-down

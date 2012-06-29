@@ -1,0 +1,4 @@
+#!/bin/sh
+PATH=/sbin:/usr/sbin:$PATH
+
+kill `cat /var/run/openvpn-$1.pid`
